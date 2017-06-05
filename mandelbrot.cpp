@@ -9,6 +9,7 @@ int isMandel(float a, float b, int iter) {
 
   for (i = 0; i < iter; i++) {
     if (re * re + im * im > 4) break;
+    if (re == a && im == b && i > 1) return iter - 1;
     temp = re * re - im * im + a;
     im = 2 * re * im + b;
     re = temp;
